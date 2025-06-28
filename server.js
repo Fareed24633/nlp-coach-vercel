@@ -4,7 +4,11 @@ const fetch = require("node-fetch");
 
 const app = express();
 
-app.use(cors({ origin: "*" }));
+// ✅ Allow only your frontend domain from Hostinger
+app.use(cors({
+  origin: "https://grey-sparrow-597965.hostingersite.com"
+}));
+
 app.use(express.json());
 
 const OPENROUTER_API_KEY = process.env.OPENROUTER_API_KEY;
